@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: #333;
+    color: #ddd;
+}
+
+.menu-toggle{
+    background: #000;
+    cursor: pointer;
+    padding: 1em;
+    display: block;
+    text-align: right;
+}
+
+#menuToggle:checked ~ ul {
+    display: block;
+}
+
+#menuToggle:checked ~ .menu-toggle .fa-times{
+    display: block;
+}
+
+#menuToggle:checked ~ .menu-toggle .fa-bars{
+    display: none;
+}
+
+/* het menu verbergen alsook .verberg-menu */
+nav>ul, .fa-times{
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    color: #eee;
+    text-decoration: none;
+    padding: 1em;
+}
+
+nav a:hover {
+    color: white;
+    background-color: black;
+}
+
+.heeft-submenu ul {
+    padding-left: .5em;
+    border-left: 5px double #ddd;
+}
