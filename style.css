@@ -76,13 +76,22 @@ nav a:hover {
     border-left: 5px double #ddd;
 }
 
-.heeft-submenu a {
+/*het submenu verbergen*/
+#nav .heeft-submenu li a {
     font-size: 0;
     height: 0;
     line-height: 0;
     transform: scaleY(0);
     border-bottom-width: 0;
     transition: all .5s ease-out;
+}
+
+#nav .heeft-submenu:hover li a {
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+    border-bottom-width: 1px;
 }
 
 .heeft-submenu a {
@@ -113,4 +122,44 @@ footer{
     color: #ddd;
     display: grid;
     grid-template-columns: 1fr auto ;
+}
+
+/*opmaak breder viewport*/
+@media screen and (min-width: 40em) {
+    nav > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+    }
+
+    /* toggel-tabel verwijdern*/
+    .menu-toggle {
+        display: none;
+    }
+
+    nav a {
+        font-size: 1em;
+        height: 1em;
+        line-height: 1em;
+        transform: scaleY(1);
+    }
+
+    .heeft-submenu {
+        position: relative;
+    }
+
+    .heeft-submenu ul {
+        position: absolute;
+        border-left: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .heeft-submenu a {
+        background-color: #333;
+    }
+
+    /*een lijntje links van de items van het hoofdmenu, behalve de eerst*/
+    nav>ul>li:not(:first-child)>a{
+        border-left: 10px solid #eee;
+    }
 }
